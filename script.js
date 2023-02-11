@@ -67,6 +67,7 @@ let newChild1 = () => {
     if (hour.value == "Hour" || minute.value == "Minute" || second.value == "Second" || AMPM.value == "AM/PM") {
         return
     }
+    document.getElementById("setAlarm2").innerHTML="You set the Alarm for:"
     const child = document.createElement("li");
     const newChild = document.createTextNode(`${hour.value}:${minute.value}:${second.value} ${AMPM.value}`)
     child.appendChild(newChild)
