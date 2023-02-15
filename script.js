@@ -63,7 +63,7 @@ for (let i = 0; i < 60; i++) {
 
 // Display Alarm time with delete button
 
-let newChild1 = () => {
+let newAlarm = () => {
     if (hour.value == "Hour" || minute.value == "Minute" || second.value == "Second" || AMPM.value == "AM/PM") {
         return
     }
@@ -122,7 +122,7 @@ function interval(h, m, s, AP) {
 }
 
 let isdelbtnpressed = false;
-
+let ringtone = new Audio("https://www.fesliyanstudios.com/play-mp3/4391");
 // Delete the alarm when Delete button gets clicked
 
 alarmTime.onclick = function (e) {
@@ -139,19 +139,24 @@ function checkDel(timeout){
         if(isdelbtnpressed){
             
         }else{
-            play();
+            ring();
         }
     }, timeout * 1000)
 }
-// Play the ringtone when the actual time become equal to Alarm time
+// Play the Alarm when the actual time become equal to Alarm time
 
-function play() {
-    ringtone = new Audio("https://www.fesliyanstudios.com/play-mp3/4391");
+function ring() {
         ringtone.play();
         ringtone.loop = true;
 }
 
+// Stop the Alarm when Stop Alarm button is pressed
+
+function stopRinging(){
+    ringtone.pause();
+}
+
 // Create an alarm when Set Alarm button gets clicked
 
-document.getElementById("setAlarm").addEventListener("click", newChild1);
-
+document.getElementById("setAlarm").addEventListener("click", newAlarm);
+document.getElementById("removeAlarm").addEventListener("click", stopRinging);
