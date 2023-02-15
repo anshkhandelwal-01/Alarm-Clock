@@ -38,12 +38,15 @@
         <option value="PM">PM</option>
       </select>
     </form>
-    <!-- Submit button to set the alarm -->
-    <button type="submit" id="setAlarm" class="btn btn-primary">Set Alarm</button>
+    <!-- Button to set/reset the alarm -->
+    <div class="d-grid gap-2 d-md-block">
+      <button class="btn btn-primary" id="setAlarm" type="submit">Set Alarm</button>
+      <button class="btn btn-primary" id="removeAlarm" type="submit">Stop Alarm</button>
+    </div>
   </div>
   <!-- Alarm Display -->
   <div class="alarmTimecontainer">
-    <p class="text-start p-2 fs-5 text-white"id="setAlarm2">No Alarm is set</p>
+    <p class="text-start p-2 fs-5 text-white" id="setAlarm2">No Alarm is set</p>
     <!-- Alarm time (to be set by the user) with delete button created dynamically based on the input -->
   <ol id="alarmTime">
   </ol>
